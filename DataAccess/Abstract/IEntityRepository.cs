@@ -1,11 +1,15 @@
-﻿using System;
+﻿using Entities.Abstract;
+using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Text;
 
 namespace DataAccess.Abstract
 {
-  public interface IEntityRepository<T>
+    //generic constraint - T yi filtreleyerek sınırlandırma
+    //class - referans olabilir demek.
+    //new: new lenebilir olmalı.
+  public interface IEntityRepository<T> where T:class, IEntity, new() //IEntity: T ya Entity olabilir ya da Entity den implemente bir şey olabilir.
     {
         List<T> GetAll(Expression<Func<T,bool>> filter = null);  //istenilen filtrelemeyi gerçekleştirmek için. Filter = null - Filtre vermeye de bilirsin demek.
         T Get(Expression<Func<T, bool>> filter = null);  //Sadece bir öğenin bilgilerini incelemek için.
