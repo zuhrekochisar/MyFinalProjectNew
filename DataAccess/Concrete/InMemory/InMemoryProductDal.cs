@@ -20,11 +20,11 @@ namespace DataAccess.Concrete.InMemory
         {
             //Oracle, Sql Server, Postgres, MongoDb den geliyormuş gibi simüle ediyoruz.
             _products = new List<Product> {
-            new Product {ProductId=1,CategoryId =1, ProductName = "Bardak", UnitInStock=15, UnitPrice = 15},
-            new Product {ProductId=2,CategoryId =1, ProductName = "Kamera", UnitInStock=3, UnitPrice = 500},
-            new Product {ProductId=3,CategoryId =2, ProductName = "Telefon", UnitInStock=2, UnitPrice = 1500},
-            new Product {ProductId=4,CategoryId =2, ProductName = "Klavye", UnitInStock=65, UnitPrice = 150},
-            new Product {ProductId=5,CategoryId =2, ProductName = "Fare", UnitInStock=1, UnitPrice = 85}
+            new Product {ProductId=1,CategoryId =1, ProductName = "Bardak", UnitPrice=15, UnitsInStock = 15},
+            new Product {ProductId=2,CategoryId =1, ProductName = "Kamera", UnitPrice=300, UnitsInStock = 3},
+            new Product {ProductId=3,CategoryId =2, ProductName = "Telefon", UnitPrice=2000, UnitsInStock = 2},
+            new Product {ProductId=4,CategoryId =2, ProductName = "Klavye", UnitPrice=150, UnitsInStock = 65},
+            new Product {ProductId=5,CategoryId =2, ProductName = "Fare", UnitPrice=50, UnitsInStock = 1}
             };
         }
         public void Add(Product product)
@@ -69,7 +69,7 @@ namespace DataAccess.Concrete.InMemory
             productToUpdate.ProductName = product.ProductName;
             productToUpdate.CategoryId = product.CategoryId;
             productToUpdate.UnitPrice = product.UnitPrice;
-            product.UnitInStock = product.UnitInStock;
+            product.UnitsInStock = product.UnitsInStock;
         }
 
         public List<Product> GetAllByCategory(int categoryId)

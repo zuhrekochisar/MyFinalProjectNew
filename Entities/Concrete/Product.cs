@@ -10,7 +10,7 @@ namespace Entities.Concrete
         public int ProductId { get; set; }
         public int CategoryId { get; set; }
         public string ProductName { get; set; }
-        public short UnitInStock { get; set; } //short; int in bir küçüğü.
+        public short UnitsInStock { get; set; } //short; int in bir küçüğü.
         public decimal UnitPrice { get; set; }
 
     }

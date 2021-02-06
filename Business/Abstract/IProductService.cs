@@ -8,5 +8,8 @@ namespace Business.Abstract  //Business a kurallar yazılır.
    public interface IProductService
     {
         List<Product> GetAll();  //Business a sağ tıklayıp proje başvurusu ekledik. DataAccess ve Entities i seçtik. Ardından ampule tıkladık.
+        List<Product> GetAllByCategoryId(int id);
+        List<Product> GetByUnitPrice(decimal min, decimal max);
     }
+
 }
