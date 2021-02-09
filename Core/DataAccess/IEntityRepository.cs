@@ -1,10 +1,10 @@
-﻿using Entities.Abstract;
+﻿using Core.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Text;
 
-namespace DataAccess.Abstract
+namespace Core.DataAccess
 {
     //generic constraint - T yi filtreleyerek sınırlandırma
     //class - referans olabilir demek.
@@ -20,3 +20,4 @@ namespace DataAccess.Abstract
        // List<T> GetAllByCategory(int categoryId);  10 ve 11. satırdan ötürü buna gerek kalmadı.
     }
 }
+//Core katmanı; diğer katmanları referans almaz.
