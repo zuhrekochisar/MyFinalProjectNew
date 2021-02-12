@@ -42,11 +42,22 @@ namespace ConsoleUI
                 Console.WriteLine(product.ProductName);
             }*/
 
-            foreach (var product in productManager.GetProductDetails())  //Fiyatı 50 ile 100 olanları getir.
-            {
+            var result = productManager.GetProductDetails();
 
-                Console.WriteLine(product.ProductName +"/"+ product.CategoryName);
+            if (result.Success == true)
+            {
+                foreach (var product in result.Data)
+                {
+
+                    Console.WriteLine(product.ProductName + "/" + product.CategoryName);
+
+                }
+
             }
+            else
+                {
+                    Console.WriteLine(result.Message);
+                }
             
         }
     }
