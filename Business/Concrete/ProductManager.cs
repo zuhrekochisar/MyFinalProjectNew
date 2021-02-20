@@ -27,7 +27,7 @@ namespace Business.Concrete
             if (product.ProductName.Length<2)
             {
                 //magic strings
-                return new ErrorResult(Messages.ProductNameInavalid);
+                return new ErrorResult(Messages.ProductNameInvalid);
             }
             _productDal.Add(product);
             return new SuccessResult(Messages.ProductAdded); //Bunu yapabilmek için constructor oluşturulmalıdır. Ampulden oluşturulur. Result sınıfına ekler.
