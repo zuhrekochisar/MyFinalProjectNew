@@ -1,10 +1,13 @@
 ﻿using Business.Abstract;
 using Business.Constants;
+using Business.ValidationRules.FluentValidation;
+using Core.CrossCuttingConcerns.Validation;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using DataAccess.Concrete.InMemory;
 using Entities.Concrete;
 using Entities.DTOs;
+using FluentValidation;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -24,11 +27,22 @@ namespace Business.Concrete
         public IResult Add(Product product)
         {
             //business codes
-            if (product.ProductName.Length<2)
-            {
-                //magic strings
-                return new ErrorResult(Messages.ProductNameInvalid);
-            }
+            //validation
+            //if (product.ProductName.Length<2)
+            //{
+            //    //magic strings
+            //    return new ErrorResult(Messages.ProductNameInvalid);
+            //}
+
+            //var context = new ValidationContext<Product>(product);
+            //ProductValidator productValidator = new ProductValidator();
+            //var result = productValidator.Validate(context);  //Sonuç geçerli değilse.
+            //if (!result.IsValid)
+            //{
+            //    throw new ValidationException(result.Errors);
+            //}
+            ValidationTool.Validate(new ProductValidator(),product);
+
             _productDal.Add(product);
             return new SuccessResult(Messages.ProductAdded); //Bunu yapabilmek için constructor oluşturulmalıdır. Ampulden oluşturulur. Result sınıfına ekler.
         }
