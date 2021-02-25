@@ -32,8 +32,8 @@ namespace WebAPI
             //Autofac -- AOP imkaný sunar.
             //Autofac, Ninject, CastleWindsor, StructureMap, LightInject, DryInject -- .Net projelerinde alttaki 3 kodun yaptýðýný yapar.
             services.AddControllers();
-            services.AddSingleton<IProductService, ProductManager>(); //Arkaplanda referans oluþtur, yani new leme yapar. Ýçerisinde Data tutulmayan durumlarda kullanýlýr.
-            services.AddSingleton<IProductDal, EfProductDal>();
+            //services.AddSingleton<IProductService, ProductManager>(); //Arkaplanda referans oluþtur, yani new leme yapar. Ýçerisinde Data tutulmayan durumlarda kullanýlýr.
+            //services.AddSingleton<IProductDal, EfProductDal>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
